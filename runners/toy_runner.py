@@ -217,12 +217,14 @@ class ToyRunner():
 
             logging.info('step: {}, loss: {}'.format(step, loss.item()))
 
-        self.visualize(teacher, score, -8, 8, savefig='tmp')
+        self.visualize(teacher, score, -8, 8, savefig='figs')
+        plt.clf()
+        self.annealed_sampling_exp()
 
     def annealed_sampling_exp(self, left_bound=-8, right_bound=8):
         sns.set(font_scale=1.3)
         sns.set_style('white')
-        savefig = r'/Users/yangsong/Desktop'
+        savefig = r'./figs'
 
         teacher = GMMDistAnneal(dim=2)
         mesh = []

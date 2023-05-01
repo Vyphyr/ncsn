@@ -30,7 +30,7 @@ data:
 
 model:
   sigma_begin: 1
-  sigma_end: 0.01
+  sigma_end: 0.1
   num_classes: 10
   batch_norm: false
   ## configurations for CelebA, CIFAR10

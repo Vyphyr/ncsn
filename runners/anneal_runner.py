@@ -260,6 +260,7 @@ class AnnealRunner():
             samples = torch.rand(grid_size ** 2, 3, 32, 32, device=self.config.device)
 
             all_samples = self.anneal_Langevin_dynamics(samples, score, sigmas, 100, 0.00002)
+            #all_samples = self.Langevin_dynamics(samples, score, n_steps=1000, step_lr=0.00005)
 
             for i, sample in enumerate(tqdm.tqdm(all_samples, total=len(all_samples), desc='saving images')):
                 sample = sample.view(grid_size ** 2, self.config.data.channels, self.config.data.image_size,
